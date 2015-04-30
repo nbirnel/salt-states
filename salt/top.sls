@@ -2,9 +2,12 @@
 
 base:
   '*':
+    - packages.salt-minion
     - packages.vim
     - packages.tmux
     - packages.ntp
-    - packages.salt-minion
     - packages.sshserver
     - users.profile
+
+  'role:Xserver':
+    - packages.xclip
