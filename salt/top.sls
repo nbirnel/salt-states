@@ -2,7 +2,6 @@
 
 base:
   '*':
-    - packages.salt-minion
     - packages.vim
     - packages.tmux
     - packages.ntp
