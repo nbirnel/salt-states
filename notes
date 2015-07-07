@@ -1,0 +1,33 @@
+=standard packages
+firefox
+  flash player
+  pentadactyl
+vim
+  pathogen
+  nerdtree
+tmux
+gcc
+make
+ssh
+ruby
+rvm
+python3
+dwm
+  dwm customization
+  dwmstatus
+  dwm-from-gdm
+salt-minion
+openvpn
+feh
+
+=to pull from git
+mark
+gitp
+volume
+mons
+synergyw
+scaffold
+
+=startup
+xkeybindings remap
+run sensors-detect
