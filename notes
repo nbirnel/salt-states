@@ -12,13 +12,10 @@ ssh
 ruby
 rvm
 python3
-dwm
-  dwm customization
-  dwmstatus
-  dwm-from-gdm
 salt-minion
 openvpn
-feh
+xclip
+unclutter
 
 =to pull from git
 mark
@@ -27,7 +24,22 @@ volume
 mons
 synergyw
 scaffold
+dwm
+  dwm customization
+  dwmstatus
+  dwm-from-gdm
+feh
+  imblib2
+  libcurl
+  libpng
+  libX11
+  libXinerama
+  libexif-dev
+  libexif12
 
 =startup
 xkeybindings remap
 run sensors-detect
+
+=redhat
+epel

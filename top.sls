@@ -2,11 +2,12 @@
 
 base:
   '*':
-    - packages.vim
-    - packages.tmux
     - packages.ntp
     - packages.sshserver
+    - packages.tmux
+    - packages.vim
     - users.profile
+
 
   'role:Xserver':
     - packages.xclip
