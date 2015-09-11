@@ -8,6 +8,10 @@ base:
     - packages.vim
     - users.profile
 
-
   'role:Xserver':
+    - match: grain
     - packages.xclip
+
+  'role:desktop':
+    - match: grain
+    - etc.fstab.desktop
