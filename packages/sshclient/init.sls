@@ -1,10 +1,6 @@
 {% set ssh = salt['grains.filter_by']({
-  'RedHat': {
-    'client_package': 'openssh-clients'
-  },
-  'Debian': {
-    'client_package': 'openssh-client'
-  }
+  'RedHat': { 'client_package': 'openssh-clients' },
+  'Debian': { 'client_package': 'openssh-client' },
 }) %}
 
 /etc/ssh/ssh_config:

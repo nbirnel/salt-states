@@ -4,9 +4,9 @@
     'client_package': 'openssh-clients'
   },
   'Debian': {
-    'service': 'ssh'
+    'service': 'ssh',
     'client_package': 'openssh-client'
-  }
+  },
 }) %}
 
 include:
