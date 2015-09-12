@@ -3,6 +3,10 @@ usb-mounts:
     - name: /etc/fstab
     - source: salt://etc/fstab/usb
 
+usb-group:
+  group.present:
+    - name: usb
+
 {% set alpha = [
   'b', 'c', 'd', 'e', 'f', 'g', 'h', 
   'i', 'j', 'k', 'l', 'm', 'n', 'o',
