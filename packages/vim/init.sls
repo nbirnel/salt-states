@@ -17,7 +17,9 @@ vim-package:
 #    - source:
 #      - salt://packages/vim/vimrc
 
-# FIXME add pathogen
+# FIXME add pathogen per users
+# mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+# curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 # badwolf is managed elsewhere; makefile to fetch?
 /usr/share/vim/vimfiles/colors/badwolf.vim:
