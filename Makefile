@@ -4,11 +4,12 @@ SALT_VERSION = v2015.5.3
 
 minion: install_salt.sh
 	./install_salt.sh git ${SALT_VERSION}
+	@now either 'make local' or set the master in /etc/salt/master
 
 install-salt.sh :
 	curl -L curl -L https://bootstrap.saltstack.com -o install_salt.sh
 
-master: salt formulas fileroots local install_salt.sh
+master: salt formulas fileroots local install_get-formulas salt.sh
 	./install_salt.sh -M git ${SALT_VERSION}
 
 salt: ${SALT}
@@ -28,7 +29,13 @@ fileroots:
 local: minion
 	cp files/minion.d/localmaster.conf /etc/salt/minion.d/
 
-pull-formulas:
-	cd formulas && for i in *; do (cd $$i && git pull origin master); done
+get-formulas:
+	cd formulas && ./get-formulas.sh
+
+devel: minion
+	cp files/devel.grains /etc/salt/minion.d
+
+kids: minion
+	cp files/kids.grains /etc/salt/minion.d
 
 .phony: all salt formulas fileroots local pull-formulas

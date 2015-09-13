@@ -1,4 +1,4 @@
 roles:
-  - desktop
   - devel
+  - desktop
   - Xserver
