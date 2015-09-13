@@ -5,12 +5,13 @@ base:
     - packages.ntp
     - packages.sshserver
     - packages.tmux
-    - packages.vim
+    - vim
     - users.profile
 
   'roles:Xserver':
     - match: grain
     - packages.xclip
+    - packages.zathura
 
   'roles:desktop':
     - match: grain
