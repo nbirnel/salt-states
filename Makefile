@@ -7,9 +7,9 @@ minion: install_salt.sh
 	@now either 'make local' or set the master in /etc/salt/master
 
 install-salt.sh :
-	curl -L curl -L https://bootstrap.saltstack.com -o install_salt.sh
+	curl -L https://bootstrap.saltstack.com -o install_salt.sh
 
-master: salt formulas fileroots local install_get-formulas salt.sh
+master: salt formulas fileroots get-formulas install_salt.sh
 	./install_salt.sh -M git ${SALT_VERSION}
 
 salt: ${SALT}
@@ -26,7 +26,7 @@ fileroots:
 	mkdir /etc/salt/master.d
 	cp files/master.d/fileroots.conf /etc/salt/master.d/
 
-local: minion
+local: minion master
 	cp files/minion.d/localmaster.conf /etc/salt/minion.d/
 
 get-formulas:
@@ -38,4 +38,4 @@ devel: minion
 kids: minion
 	cp files/kids.grains /etc/salt/minion.d
 
-.phony: all salt formulas fileroots local pull-formulas
+.phony: all salt formulas fileroots local pull-formulas devel kids
