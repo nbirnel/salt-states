@@ -1,10 +1,22 @@
-DEST = /srv/salt
+SALT = /srv/salt
+FORMULAS = /srv/formulas
 
-all: dest
+all: salt formulas
 
-dest: ${DEST}
+salt: ${SALT}
 
-${DEST}: 
+${SALT}: 
 	ln -s "$$PWD/salt" $@
 
-.phony: all dest
+formulas: ${FORMULAS}
+
+${FORMULAS}: 
+	ln -s "$$PWD/formulas" $@
+
+local:
+	cp files/minion.d/localmaster.conf /etc/salt/minion.d/
+
+pull-formulas:
+	cd formulas && for i in *; do (cd $i && git pull origin master); done
+
+.phony: all salt formulas local
