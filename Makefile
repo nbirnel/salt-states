@@ -5,6 +5,6 @@ all: dest
 dest: ${DEST}
 
 ${DEST}: 
-	ln -s "$$PWD" $@
+	ln -s "$$PWD/salt" $@
 
 .phony: all dest
