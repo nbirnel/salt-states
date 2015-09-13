@@ -4,7 +4,7 @@ SALT_VERSION = v2015.5.3
 
 minion: install_salt.sh
 	./install_salt.sh git ${SALT_VERSION}
-	@now either 'make local' or set the master in /etc/salt/master
+	@echo now either 'make local' or set the master in /etc/salt/master
 
 install-salt.sh :
 	curl -L https://bootstrap.saltstack.com -o install_salt.sh
