@@ -1,6 +1,6 @@
 #!/bin/sh
 
-FORMULAS="vim-formula some-other-formula"
+FORMULAS="vim-formula"
 BASE=https://github.com/nbirnel
 
 for i in $FORMULAS; do
