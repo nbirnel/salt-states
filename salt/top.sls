@@ -5,6 +5,7 @@ base:
     - packages.ntp
     - packages.sshserver
     - packages.tmux
+    - packages.pwgen
     - vim
     - users.profile
 
