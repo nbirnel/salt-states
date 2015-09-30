@@ -20,3 +20,7 @@ base:
   'roles:devel':
     - match: grain
     - packages.git
+
+  'roles:winenv':
+    - match: grain
+    - packages.rdesktop
