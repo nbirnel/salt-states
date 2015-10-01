@@ -3,9 +3,10 @@
 base:
   '*':
     - packages.ntp
+    - packages.pwgen
     - packages.sshserver
     - packages.tmux
-    - packages.pwgen
+    - packages.whois
     - vim
     - users.profile
 
