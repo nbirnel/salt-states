@@ -15,6 +15,10 @@ base:
     - packages.xclip
     - packages.zathura
 
+  'roles:networker':
+    - match: grain
+    - packages.nmap
+
   'roles:desktop':
     - match: grain
     - etc.fstab.desktop
@@ -22,6 +26,7 @@ base:
   'roles:devel':
     - match: grain
     - packages.git
+    - packages.sloccount
 
   'roles:winenv':
     - match: grain
