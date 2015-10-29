@@ -22,6 +22,7 @@ base:
   'roles:desktop':
     - match: grain
     - etc.fstab.desktop
+    - misc.ctrl-alt-del
 
   'roles:devel':
     - match: grain
