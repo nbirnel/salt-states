@@ -1,0 +1,3 @@
+hunspell:
+  pkg:
+    - installed
