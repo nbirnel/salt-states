@@ -32,3 +32,8 @@ base:
   'roles:winenv':
     - match: grain
     - packages.rdesktop
+
+  'roles:remote':
+    - match: grain
+    - packages.openvpn
+
