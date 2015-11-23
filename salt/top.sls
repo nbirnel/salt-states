@@ -14,7 +14,6 @@ base:
     - match: grain
     - packages.xclip
     - packages.zathura
-    - packages.feh
 
   'roles:networker':
     - match: grain
