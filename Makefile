@@ -38,10 +38,10 @@ local:
 get-formulas:
 	cd formulas && ./get-formulas.sh
 
-devel: minion
+devel: 
 	cp files/devel.grains /etc/salt/minion.d
 
-kids: minion
+kids:
 	cp files/kids.grains /etc/salt/minion.d
 
 .phony: all salt formulas fileroots local pull-formulas devel kids master minion
