@@ -18,6 +18,7 @@ base:
   'roles:networker':
     - match: grain
     - packages.nmap
+    - packages.graphviz
 
   'roles:desktop':
     - match: grain
