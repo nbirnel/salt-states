@@ -40,9 +40,9 @@ get-formulas:
 	cd formulas && ./get-formulas.sh
 
 devel: 
-	cp files/devel.grains /etc/salt/minion.d
+	cp files/devel_grains.conf /etc/salt/minion.d/
 
 kids:
-	cp files/kids.grains /etc/salt/minion.d
+	cp files/kids_grains.conf /etc/salt/minion.d
 
 .phony: all salt formulas fileroots local pull-formulas devel kids master minion
