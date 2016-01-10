@@ -1,9 +1,9 @@
 #!/bin/sh
 
-FORMULAS="vim-formula"
+FORMULAS="vim-formula suckless-formula"
 BASE=https://github.com/nbirnel
 
 for i in $FORMULAS; do
     test -d $i || git clone $BASE/$i
-    cd $i && git pull origin master
+    ( cd $i && git pull origin master )
 done
