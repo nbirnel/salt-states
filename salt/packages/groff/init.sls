@@ -1,0 +1,4 @@
+groff:
+  pkg:
+    - installed
+
