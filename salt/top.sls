@@ -14,6 +14,7 @@ base:
     - match: grain
     - packages.xclip
     - packages.zathura
+    - suckless.dwm
 
   'roles:networker':
     - match: grain
@@ -39,3 +40,7 @@ base:
     - match: grain
     - packages.openvpn
 
+  'roles:music':
+    - match: grain
+    - packages.csound
+    
