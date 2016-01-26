@@ -17,3 +17,11 @@ python-pygraphviz:
 xdot:
   pkg:
     - installed
+
+graphviz-dev:
+  pkg:
+    - installed
+
+libgraphviz-dev:
+  pkg:
+    - installed

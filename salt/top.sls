@@ -30,6 +30,7 @@ base:
     - match: grain
     - packages.git
     - packages.sloccount
+    - packages.groff
 
   'roles:winenv':
     - match: grain
