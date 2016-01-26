@@ -20,6 +20,7 @@ base:
     - match: grain
     - packages.nmap
     - packages.graphviz
+    - packages.wireshark
 
   'roles:desktop':
     - match: grain
