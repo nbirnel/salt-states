@@ -1,0 +1,4 @@
+sox:
+  pkg:
+    - installed
+
