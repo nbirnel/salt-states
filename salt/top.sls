@@ -45,4 +45,5 @@ base:
   'roles:music':
     - match: grain
     - packages.csound
+    - packages.supercollider
     
