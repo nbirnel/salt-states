@@ -46,4 +46,5 @@ base:
     - match: grain
     - packages.csound
     - packages.sox
+    - packages.supercollider
     
