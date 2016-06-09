@@ -5,6 +5,7 @@ base:
     - packages.ntp
     - packages.pwgen
     - packages.sshserver
+    - packages.autossh
     - packages.tmux
     - packages.whois
     - vim
@@ -14,7 +15,6 @@ base:
     - match: grain
     - packages.xclip
     - packages.zathura
-    - suckless.dwm
 
   'roles:networker':
     - match: grain
