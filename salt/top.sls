@@ -34,6 +34,7 @@ base:
     - packages.sloccount
     - packages.groff
     - packages.vagrant
+    - packages.virtualbox
 
   'roles:winenv':
     - match: grain
