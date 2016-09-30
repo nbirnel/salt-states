@@ -1,0 +1,13 @@
+{% set vagrant = salt['grains.filter_by']({
+  'RedHat': {
+      'pkg_suffix': '_x86_64.rpm',
+      'install': 'rpm -i',
+      },
+  'Debian': {
+      'pkg_suffix': '_x86_64.deb',
+      'install': 'dpkg -i',
+      },
+}) %}
+
+{% set vagrant_base_url = 'https://releases.hashicorp.com/vagrant' %}
+{% set vagrant_version = '1.8.6' %}

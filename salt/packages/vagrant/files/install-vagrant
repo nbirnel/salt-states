@@ -1,0 +1,49 @@
+{% from "packages/vagrant/map.jinja" import vagrant with context -%}
+{% from "packages/vagrant/map.jinja" import vagrant_base_url with context -%}
+{% from "packages/vagrant/map.jinja" import vagrant_version with context -%}
+#!/bin/sh
+
+# https://releases.hashicorp.com/vagrant/1.8.6/vagrant_1.8.6_x86_64.deb
+# https://releases.hashicorp.com/vagrant/1.8.6/vagrant_1.8.6_SHA256SUMS
+# https://releases.hashicorp.com/vagrant/1.8.6/vagrant_1.8.6_SHA256SUMS.sig
+
+version="{{vagrant_version}}"
+base_url="{{vagrant_base_url}}/{{vagrant_version}}"
+
+fn="vagrant_{{vagrant_version}}{{vagrant.pkg_suffix}}"
+sum="vagrant_{{vagrant_version}}_SHA256SUMS"
+sig="vagrant_{{vagrant_version}}_SHA256SUMS.sig"
+
+fn_url="$base_url/$fn"
+sum_url="$base_url/$sum"
+sig_url="$base_url/$sig"
+
+get_package() {
+    curl -Os "$fn_url" || exit 1
+    curl -Os "$sum_url" || exit 1
+    curl -Os "$sig_url" || exit 1
+}
+
+verify_package() {
+	# Verify the signature file is untampered.
+	gpg --verify "$sig" "$sum" 2>/dev/null || exit 1
+
+	# Verify the SHASUM matches the binary.
+	grep -F "$fn" "$sum" | shasum -a 256 >/dev/null || exit 1
+}
+
+install_vagrant() {
+    get_package
+    verify_package
+    {{vagrant.install}} "$fn" >/dev/null || exit 1
+    echo "changed='yes' comment='New Vagrant version' version='{{vagrant_version}}'"
+}
+
+gpg --import hashicorp.asc 2>/dev/null || exit 1
+work_dir="$(mktemp -d)" || exit 1
+cd "$work_dir" || exit 1
+
+which vagrant >/dev/null || install_vagrant
+test "$(vagrant --version 2>/dev/null)" = "Vagrant {{vagrant_version}}" \
+  || install_vagrant
+

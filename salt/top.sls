@@ -33,6 +33,7 @@ base:
     - packages.git
     - packages.sloccount
     - packages.groff
+    - packages.vagrant
 
   'roles:winenv':
     - match: grain
