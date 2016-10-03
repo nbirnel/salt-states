@@ -1,0 +1,54 @@
+{% from "packages/terraform/map.jinja" import terraform_base_url with context -%}
+{% from "packages/terraform/map.jinja" import terraform_version with context -%}
+#!/bin/sh
+
+# https://releases.hashicorp.com/terraform/1.8.6/terraform_1.8.6_x86_64.deb
+# https://releases.hashicorp.com/terraform/1.8.6/terraform_1.8.6_SHA256SUMS
+# https://releases.hashicorp.com/terraform/1.8.6/terraform_1.8.6_SHA256SUMS.sig
+
+version="{{terraform_version}}"
+base_url="{{terraform_base_url}}/{{terraform_version}}"
+dest="/usr/local/bin"
+
+fn="terraform_{{terraform_version}}_linux_amd64.zip"
+sum="terraform_{{terraform_version}}_SHA256SUMS"
+sig="terraform_{{terraform_version}}_SHA256SUMS.sig"
+
+fn_url="$base_url/$fn"
+sum_url="$base_url/$sum"
+sig_url="$base_url/$sig"
+
+get_package() {
+    curl -Os "$fn_url" || exit 1
+    curl -Os "$sum_url" || exit 1
+    curl -Os "$sig_url" || exit 1
+}
+
+verify_package() {
+	# Verify the signature file is untampered.
+	gpg --verify "$sig" "$sum" 2>/dev/null || exit 1
+
+	# Verify the SHASUM matches the binary.
+	grep -F "$fn" "$sum" | shasum -a 256 >/dev/null || exit 1
+}
+
+carry_to_destination() {
+    mkdir -p "$dest" || exit 1
+    unzip "$fn" -d "$dest" || exit 1
+}
+
+install_terraform() {
+    get_package
+    verify_package
+    carry_to_destination
+    echo "changed='yes' comment='New terraform version' version='{{terraform_version}}'"
+}
+
+gpg --import hashicorp.asc 2>/dev/null || exit 1
+work_dir="$(mktemp -d)" || exit 1
+cd "$work_dir" || exit 1
+
+which terraform >/dev/null || install_terraform
+test "$(terraform version 2>/dev/null | sed 1q)" = "Terraform v{{terraform_version}}" \
+  || install_terraform
+

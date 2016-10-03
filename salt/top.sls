@@ -34,6 +34,7 @@ base:
     - packages.sloccount
     - packages.groff
     - packages.packer
+    - packages.terraform
     - packages.vagrant
     - packages.virtualbox
 
