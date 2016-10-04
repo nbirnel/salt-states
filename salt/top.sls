@@ -42,6 +42,7 @@ base:
   'roles:winenv':
     - match: grain
     - packages.rdesktop
+    - packages.skype
 
   'roles:remote':
     - match: grain
