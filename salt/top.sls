@@ -36,6 +36,7 @@ base:
     - packages.packer
     - packages.terraform
     - packages.vagrant
+    - packages.vault
     - packages.virtualbox
 
   'roles:winenv':
