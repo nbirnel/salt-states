@@ -1,0 +1,25 @@
+{% from "packages/skype/map.jinja" import skype_base_url with context -%}
+{% from "packages/skype/map.jinja" import skype_pkg_suffix with context -%}
+{% from "packages/skype/map.jinja" import skype_install with context -%}
+#!/bin/sh
+
+base_url="{{skype_base_url}}"
+
+fn="skypeforlinux-64-alpha{{skype_pkg_suffix}}"
+
+fn_url="$base_url/$fn"
+
+get_package() {
+    wget "$fn_url" || exit 1
+}
+
+install_skype() {
+    get_package
+    {{skype_install}} "$fn" >/dev/null || exit 1
+    echo "changed='yes' comment='skype installed'"
+}
+
+work_dir="$(mktemp -d)" || exit 1
+cd "$work_dir" || exit 1
+
+which skypeforlinux >/dev/null || install_skype
