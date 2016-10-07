@@ -34,7 +34,7 @@ verify_package() {
 
 carry_to_destination() {
     mkdir -p "$dest" || exit 1
-    unzip "$fn" -d "$dest" || exit 1
+    unzip -o "$fn" -d "$dest" || exit 1
 }
 
 install_vault() {
