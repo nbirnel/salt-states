@@ -27,6 +27,7 @@ base:
     - etc.fstab.desktop
     - misc.ctrl-alt-del
     - packages.hunspell
+    - packages.hwinfo
 
   'roles:devel':
     - match: grain
