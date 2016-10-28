@@ -28,6 +28,7 @@ base:
     - misc.ctrl-alt-del
     - packages.hunspell
     - packages.hwinfo
+    - packages.libav
 
   'roles:devel':
     - match: grain
