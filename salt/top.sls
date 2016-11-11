@@ -32,10 +32,11 @@ base:
 
   'roles:devel':
     - match: grain
+    - packages.docutils
     - packages.git
-    - packages.sloccount
     - packages.groff
     - packages.packer
+    - packages.sloccount
     - packages.terraform
     - packages.vagrant
     - packages.vault
