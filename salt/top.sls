@@ -7,6 +7,7 @@ base:
     - packages.sshserver
     - packages.autossh
     - packages.tmux
+    - packages.xkbset
     - packages.whois
     - vim
     - users.profile
