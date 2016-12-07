@@ -57,4 +57,9 @@ base:
     - packages.csound
     - packages.sox
     - packages.supercollider
-    
+
+  'roles:forensic':
+    - match: grain
+    - packages.antiword
+    - packages.catdoc
+
