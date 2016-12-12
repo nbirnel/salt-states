@@ -3,6 +3,10 @@
     'service': 'sshd',
     'client_package': 'openssh-clients'
   },
+  'Suse': {
+    'service': 'sshd',
+    'client_package': 'openssh-clients'
+  },
   'Debian': {
     'service': 'ssh',
     'client_package': 'openssh-client'

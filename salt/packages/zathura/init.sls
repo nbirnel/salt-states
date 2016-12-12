@@ -2,6 +2,9 @@
   'RedHat': {
     'package': 'zathura-plugins-all'
   },
+  'Suse': {
+    'package': 'zathura-plugin-pdf-poppler'
+  },
   'Debian': {
     'package': 'zathura'
   },
