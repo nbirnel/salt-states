@@ -19,6 +19,7 @@ usb-group:
   file.directory:
     - user: root
     - group: usb
+    - makedirs: True
     - dir_mode: 770
     - file_mode: 660
 {% endfor %}
