@@ -4,10 +4,8 @@ base:
   '*':
     - packages.ntp
     - packages.pwgen
-    - packages.sshserver
     - packages.autossh
     - packages.tmux
-    - packages.xkbset
     - packages.whois
     - vim
     - users.profile
@@ -36,12 +34,7 @@ base:
     - packages.docutils
     - packages.git
     - packages.groff
-    - packages.packer
     - packages.sloccount
-    - packages.terraform
-    - packages.vagrant
-    - packages.vault
-    - packages.virtualbox
 
   'roles:winenv':
     - match: grain
