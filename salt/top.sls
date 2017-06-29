@@ -32,6 +32,7 @@ base:
   'roles:devel':
     - match: grain
     - packages.docutils
+    - packages.gist
     - packages.git
     - packages.groff
     - packages.sloccount
