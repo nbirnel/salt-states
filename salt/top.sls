@@ -7,6 +7,7 @@ base:
     - packages.autossh
     - packages.tmux
     - packages.whois
+    - etc.modprobe.no-beeps
     - vim
     - users.profile
 
