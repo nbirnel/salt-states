@@ -8,7 +8,6 @@ base:
     - packages.tmux
     - packages.whois
     - etc.modprobe.no-beeps
-    - vim
     - users.profile
 
   'roles:Xserver':
@@ -33,7 +32,6 @@ base:
   'roles:devel':
     - match: grain
     - packages.docutils
-    - packages.gist
     - packages.git
     - packages.groff
     - packages.sloccount

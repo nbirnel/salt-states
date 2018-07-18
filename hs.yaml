@@ -1,0 +1,730 @@
+local:
+----------
+          ID: /etc/ntp.conf
+    Function: file.managed
+      Result: True
+     Comment: File /etc/ntp.conf updated
+     Started: 11:42:54.314482
+    Duration: 32.277 ms
+     Changes:   
+              ----------
+              diff:
+                  New file
+              mode:
+                  0644
+----------
+          ID: ntp-package
+    Function: pkg.installed
+        Name: ntp
+      Result: True
+     Comment: The following packages were installed/updated: ntp
+     Started: 11:42:56.802572
+    Duration: 21999.744 ms
+     Changes:   
+              ----------
+              libopts25:
+                  ----------
+                  new:
+                      1:5.18.12-4
+                  old:
+              ntp:
+                  ----------
+                  new:
+                      1:4.2.8p10+dfsg-5ubuntu7.1
+                  old:
+              sntp:
+                  ----------
+                  new:
+                      1:4.2.8p10+dfsg-5ubuntu7.1
+                  old:
+----------
+          ID: ntpd-service
+    Function: service.running
+        Name: ntp
+      Result: True
+     Comment: The service ntp is already running
+     Started: 11:43:19.588087
+    Duration: 33.84 ms
+     Changes:   
+----------
+          ID: pwgen-package
+    Function: pkg.installed
+        Name: pwgen
+      Result: True
+     Comment: The following packages were installed/updated: pwgen
+     Started: 11:43:19.623509
+    Duration: 8410.798 ms
+     Changes:   
+              ----------
+              pwgen:
+                  ----------
+                  new:
+                      2.08-1
+                  old:
+----------
+          ID: autossh-package
+    Function: pkg.installed
+        Name: autossh
+      Result: True
+     Comment: The following packages were installed/updated: autossh
+     Started: 11:43:28.048531
+    Duration: 9321.325 ms
+     Changes:   
+              ----------
+              autossh:
+                  ----------
+                  new:
+                      1.4e-4
+                  old:
+----------
+          ID: tmux-package
+    Function: pkg.installed
+        Name: tmux
+      Result: True
+     Comment: All specified packages are already installed
+     Started: 11:43:37.376599
+    Duration: 2440.185 ms
+     Changes:   
+----------
+          ID: /etc/tmux.conf
+    Function: file.managed
+      Result: True
+     Comment: File /etc/tmux.conf updated
+     Started: 11:43:39.818478
+    Duration: 17.111 ms
+     Changes:   
+              ----------
+              diff:
+                  New file
+              mode:
+                  0644
+----------
+          ID: whois-package
+    Function: pkg.installed
+        Name: whois
+      Result: True
+     Comment: The following packages were installed/updated: whois
+     Started: 11:43:39.835706
+    Duration: 7042.648 ms
+     Changes:   
+              ----------
+              whois:
+                  ----------
+                  new:
+                      5.3.0
+                  old:
+----------
+          ID: no-beeps
+    Function: file.managed
+        Name: /etc/modprobe.d/50-nobeeps.conf
+      Result: True
+     Comment: Empty file
+     Started: 11:43:46.883856
+    Duration: 6.609 ms
+     Changes:   
+              ----------
+              mode:
+                  0644
+              new:
+                  file /etc/modprobe.d/50-nobeeps.conf created
+----------
+          ID: /etc/bash.bash.logout
+    Function: file.managed
+      Result: True
+     Comment: File /etc/bash.bash.logout updated
+     Started: 11:43:46.890631
+    Duration: 101.245 ms
+     Changes:   
+              ----------
+              diff:
+                  New file
+              mode:
+                  0666
+----------
+          ID: xclip-package
+    Function: pkg.installed
+        Name: xclip
+      Result: True
+     Comment: All specified packages are already installed
+     Started: 11:43:46.997772
+    Duration: 2537.605 ms
+     Changes:   
+----------
+          ID: zathura-package
+    Function: pkg.installed
+        Name: zathura
+      Result: True
+     Comment: The following packages were installed/updated: zathura
+     Started: 11:43:49.535533
+    Duration: 7842.389 ms
+     Changes:   
+              ----------
+              libgirara-gtk3-3:
+                  ----------
+                  new:
+                      0.2.8-2
+                  old:
+              libsynctex1:
+                  ----------
+                  new:
+                      2017.20170613.44572-8build1
+                  old:
+              zathura:
+                  ----------
+                  new:
+                      0.3.8-1
+                  old:
+              zathura-abi-3:
+                  ----------
+                  new:
+                      1
+                  old:
+              zathura-pdf-poppler:
+                  ----------
+                  new:
+                      0.2.8-1
+                  old:
+----------
+          ID: usb-mounts
+    Function: file.append
+        Name: /etc/fstab
+      Result: True
+     Comment: Appended 25 lines
+     Started: 11:43:57.383360
+    Duration: 102.142 ms
+     Changes:   
+              ----------
+              diff:
+                  --- 
+                  
+                  +++ 
+                  
+                  @@ -11,3 +11,28 @@
+                  
+                   # /boot/efi was on /dev/sda1 during installation
+                   UUID=4230-D06D  /boot/efi       vfat    umask=0077      0       1
+                   /dev/mapper/ubuntu--vg-swap_1 none            swap    sw              0       0
+                  +/dev/sdb1	/media/usbb	vfat	noauto,defaults,user	0	0
+                  +/dev/sdc1	/media/usbc	vfat	noauto,defaults,user	0	0
+                  +/dev/sdd1	/media/usbd	vfat	noauto,defaults,user	0	0
+                  +/dev/sde1	/media/usbe	vfat	noauto,defaults,user	0	0
+                  +/dev/sdf1	/media/usbf	vfat	noauto,defaults,user	0	0
+                  +/dev/sdg1	/media/usbg	vfat	noauto,defaults,user	0	0
+                  +/dev/sdh1	/media/usbh	vfat	noauto,defaults,user	0	0
+                  +/dev/sdi1	/media/usbi	vfat	noauto,defaults,user	0	0
+                  +/dev/sdj1	/media/usbj	vfat	noauto,defaults,user	0	0
+                  +/dev/sdk1	/media/usbk	vfat	noauto,defaults,user	0	0
+                  +/dev/sdl1	/media/usbl	vfat	noauto,defaults,user	0	0
+                  +/dev/sdm1	/media/usbm	vfat	noauto,defaults,user	0	0
+                  +/dev/sdn1	/media/usbn	vfat	noauto,defaults,user	0	0
+                  +/dev/sdo1	/media/usbo	vfat	noauto,defaults,user	0	0
+                  +/dev/sdp1	/media/usbp	vfat	noauto,defaults,user	0	0
+                  +/dev/sdq1	/media/usbq	vfat	noauto,defaults,user	0	0
+                  +/dev/sdr1	/media/usbr	vfat	noauto,defaults,user	0	0
+                  +/dev/sds1	/media/usbs	vfat	noauto,defaults,user	0	0
+                  +/dev/sdt1	/media/usbt	vfat	noauto,defaults,user	0	0
+                  +/dev/sdu1	/media/usbu	vfat	noauto,defaults,user	0	0
+                  +/dev/sdv1	/media/usbv	vfat	noauto,defaults,user	0	0
+                  +/dev/sdw1	/media/usbw	vfat	noauto,defaults,user	0	0
+                  +/dev/sdx1	/media/usbx	vfat	noauto,defaults,user	0	0
+                  +/dev/sdy1	/media/usby	vfat	noauto,defaults,user	0	0
+                  +/dev/sdz1	/media/usbz	vfat	noauto,defaults,user	0	0
+----------
+          ID: usb-group
+    Function: group.present
+        Name: usb
+      Result: True
+     Comment: New group usb created
+     Started: 11:43:57.486072
+    Duration: 133.289 ms
+     Changes:   
+              ----------
+              gid:
+                  1001
+              members:
+              name:
+                  usb
+              passwd:
+                  x
+----------
+          ID: /media/usbb
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbb updated
+     Started: 11:43:57.619576
+    Duration: 4.327 ms
+     Changes:   
+              ----------
+              /media/usbb:
+                  New Dir
+----------
+          ID: /media/usbc
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbc updated
+     Started: 11:43:57.624024
+    Duration: 1.785 ms
+     Changes:   
+              ----------
+              /media/usbc:
+                  New Dir
+----------
+          ID: /media/usbd
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbd updated
+     Started: 11:43:57.625966
+    Duration: 2.145 ms
+     Changes:   
+              ----------
+              /media/usbd:
+                  New Dir
+----------
+          ID: /media/usbe
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbe updated
+     Started: 11:43:57.628227
+    Duration: 2.066 ms
+     Changes:   
+              ----------
+              /media/usbe:
+                  New Dir
+----------
+          ID: /media/usbf
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbf updated
+     Started: 11:43:57.630475
+    Duration: 2.891 ms
+     Changes:   
+              ----------
+              /media/usbf:
+                  New Dir
+----------
+          ID: /media/usbg
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbg updated
+     Started: 11:43:57.633556
+    Duration: 2.604 ms
+     Changes:   
+              ----------
+              /media/usbg:
+                  New Dir
+----------
+          ID: /media/usbh
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbh updated
+     Started: 11:43:57.636426
+    Duration: 1.98 ms
+     Changes:   
+              ----------
+              /media/usbh:
+                  New Dir
+----------
+          ID: /media/usbi
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbi updated
+     Started: 11:43:57.638524
+    Duration: 2.132 ms
+     Changes:   
+              ----------
+              /media/usbi:
+                  New Dir
+----------
+          ID: /media/usbj
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbj updated
+     Started: 11:43:57.640786
+    Duration: 1.524 ms
+     Changes:   
+              ----------
+              /media/usbj:
+                  New Dir
+----------
+          ID: /media/usbk
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbk updated
+     Started: 11:43:57.642423
+    Duration: 1.461 ms
+     Changes:   
+              ----------
+              /media/usbk:
+                  New Dir
+----------
+          ID: /media/usbl
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbl updated
+     Started: 11:43:57.643991
+    Duration: 1.515 ms
+     Changes:   
+              ----------
+              /media/usbl:
+                  New Dir
+----------
+          ID: /media/usbm
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbm updated
+     Started: 11:43:57.645638
+    Duration: 1.565 ms
+     Changes:   
+              ----------
+              /media/usbm:
+                  New Dir
+----------
+          ID: /media/usbn
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbn updated
+     Started: 11:43:57.647333
+    Duration: 2.413 ms
+     Changes:   
+              ----------
+              /media/usbn:
+                  New Dir
+----------
+          ID: /media/usbo
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbo updated
+     Started: 11:43:57.649935
+    Duration: 2.051 ms
+     Changes:   
+              ----------
+              /media/usbo:
+                  New Dir
+----------
+          ID: /media/usbp
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbp updated
+     Started: 11:43:57.652103
+    Duration: 1.526 ms
+     Changes:   
+              ----------
+              /media/usbp:
+                  New Dir
+----------
+          ID: /media/usbq
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbq updated
+     Started: 11:43:57.653749
+    Duration: 1.538 ms
+     Changes:   
+              ----------
+              /media/usbq:
+                  New Dir
+----------
+          ID: /media/usbr
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbr updated
+     Started: 11:43:57.655412
+    Duration: 2.449 ms
+     Changes:   
+              ----------
+              /media/usbr:
+                  New Dir
+----------
+          ID: /media/usbs
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbs updated
+     Started: 11:43:57.658059
+    Duration: 1.783 ms
+     Changes:   
+              ----------
+              /media/usbs:
+                  New Dir
+----------
+          ID: /media/usbt
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbt updated
+     Started: 11:43:57.659981
+    Duration: 1.863 ms
+     Changes:   
+              ----------
+              /media/usbt:
+                  New Dir
+----------
+          ID: /media/usbu
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbu updated
+     Started: 11:43:57.662034
+    Duration: 2.448 ms
+     Changes:   
+              ----------
+              /media/usbu:
+                  New Dir
+----------
+          ID: /media/usbv
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbv updated
+     Started: 11:43:57.664655
+    Duration: 2.625 ms
+     Changes:   
+              ----------
+              /media/usbv:
+                  New Dir
+----------
+          ID: /media/usbw
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbw updated
+     Started: 11:43:57.667456
+    Duration: 2.179 ms
+     Changes:   
+              ----------
+              /media/usbw:
+                  New Dir
+----------
+          ID: /media/usbx
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbx updated
+     Started: 11:43:57.669831
+    Duration: 2.032 ms
+     Changes:   
+              ----------
+              /media/usbx:
+                  New Dir
+----------
+          ID: /media/usby
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usby updated
+     Started: 11:43:57.672010
+    Duration: 2.07 ms
+     Changes:   
+              ----------
+              /media/usby:
+                  New Dir
+----------
+          ID: /media/usbz
+    Function: file.directory
+      Result: True
+     Comment: Directory /media/usbz updated
+     Started: 11:43:57.674252
+    Duration: 2.416 ms
+     Changes:   
+              ----------
+              /media/usbz:
+                  New Dir
+----------
+          ID: ctr-alt-del
+    Function: file.managed
+        Name: /etc/init/control-alt-delete.conf
+      Result: True
+     Comment: File /etc/init/control-alt-delete.conf updated
+     Started: 11:43:57.676833
+    Duration: 17.955 ms
+     Changes:   
+              ----------
+              diff:
+                  New file
+              mode:
+                  0644
+----------
+          ID: hunspell
+    Function: pkg.installed
+      Result: True
+     Comment: The following packages were installed/updated: hunspell
+     Started: 11:43:57.700487
+    Duration: 9279.8 ms
+     Changes:   
+              ----------
+              hunspell:
+                  ----------
+                  new:
+                      1.6.2-1
+                  old:
+----------
+          ID: hwinfo-package
+    Function: pkg.installed
+        Name: hwinfo
+      Result: True
+     Comment: The following packages were installed/updated: hwinfo
+     Started: 11:44:06.996436
+    Duration: 10898.196 ms
+     Changes:   
+              ----------
+              hwinfo:
+                  ----------
+                  new:
+                      21.52-1
+                  old:
+              libhd21:
+                  ----------
+                  new:
+                      21.52-1
+                  old:
+              libx86emu1:
+                  ----------
+                  new:
+                      1.12-1
+                  old:
+----------
+          ID: libav-tools-package
+    Function: pkg.installed
+        Name: libav-tools
+      Result: False
+     Comment: Problem encountered installing package(s). Additional info follows:
+              
+              errors:
+                  - Running scope as unit: run-r7fba4d5ce3b547ba9e7e1627ab198b7f.scope
+                    E: Package 'libav-tools' has no installation candidate
+     Started: 11:44:17.901509
+    Duration: 3832.163 ms
+     Changes:   
+----------
+          ID: docutils-package
+    Function: pkg.installed
+        Name: python3-docutils
+      Result: True
+     Comment: The following packages were installed/updated: python3-docutils
+     Started: 11:44:21.733955
+    Duration: 17673.594 ms
+     Changes:   
+              ----------
+              docutils:
+                  ----------
+                  new:
+                      1
+                  old:
+              docutils-common:
+                  ----------
+                  new:
+                      0.14+dfsg-3
+                  old:
+              python3-docutils:
+                  ----------
+                  new:
+                      0.14+dfsg-3
+                  old:
+              python3-pygments:
+                  ----------
+                  new:
+                      2.2.0+dfsg-1
+                  old:
+              python3-roman:
+                  ----------
+                  new:
+                      2.0.0-3
+                  old:
+              sgml-base:
+                  ----------
+                  new:
+                      1.29
+                  old:
+              xml-core:
+                  ----------
+                  new:
+                      0.18
+                  old:
+----------
+          ID: pandoc-package
+    Function: pkg.installed
+        Name: pandoc
+      Result: True
+     Comment: The following packages were installed/updated: pandoc
+     Started: 11:44:39.415362
+    Duration: 11782.758 ms
+     Changes:   
+              ----------
+              liblua5.1-0:
+                  ----------
+                  new:
+                      5.1.5-8.1build2
+                  old:
+              libluajit-5.1-2:
+                  ----------
+                  new:
+                      2.1.0~beta3+dfsg-5.1
+                  old:
+              libluajit-5.1-common:
+                  ----------
+                  new:
+                      2.1.0~beta3+dfsg-5.1
+                  old:
+              pandoc:
+                  ----------
+                  new:
+                      1.19.2.4~dfsg-1build4
+                  old:
+              pandoc-data:
+                  ----------
+                  new:
+                      1.19.2.4~dfsg-1build4
+                  old:
+----------
+          ID: git-package
+    Function: pkg.installed
+        Name: git
+      Result: True
+     Comment: All specified packages are already installed
+     Started: 11:44:51.210536
+    Duration: 2346.689 ms
+     Changes:   
+----------
+          ID: groff
+    Function: pkg.installed
+      Result: True
+     Comment: The following packages were installed/updated: groff
+     Started: 11:44:53.557371
+    Duration: 9034.342 ms
+     Changes:   
+              ----------
+              groff:
+                  ----------
+                  new:
+                      1.22.3-10
+                  old:
+              groff-x11:
+                  ----------
+                  new:
+                      1
+                  old:
+              jgroff:
+                  ----------
+                  new:
+                      1
+                  old:
+              psutils:
+                  ----------
+                  new:
+                      1.17.dfsg-4
+                  old:
+----------
+          ID: sloccount-package
+    Function: pkg.installed
+        Name: sloccount
+      Result: True
+     Comment: The following packages were installed/updated: sloccount
+     Started: 11:45:02.598971
+    Duration: 9159.705 ms
+     Changes:   
+              ----------
+              sloccount:
+                  ----------
+                  new:
+                      2.26-5.2
+                  old:
+
+Summary for local
+-------------
+Succeeded: 47 (changed=43)
+Failed:     1
+-------------
+Total states run:     48
+Total run time:  134.100 s
